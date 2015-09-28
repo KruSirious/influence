@@ -6,8 +6,14 @@
 </head>
 <body>
     <h1>YOOOO</h1>
-    <script src="/socket.io/socket.io.js"></script>
+    <input type="text" id="texte"></input>
+    <button id='send'>Envoyer</button>
+    <script src="/socket.io/socket.io.js"></script>  
+    <script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
     <script> var socket = io();
+        $('#send').on('click', function(choice){
+            socket.emit('choice', $('#texte').val());
+        });
     </script>
 </body>
 </html>
